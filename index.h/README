@@ -1,0 +1,28 @@
+# WEBSITE SEDERHANA TENTANG MOTOGP
+
+Ini adalah website sederhana yang membahas tentang MotoGP.
+
+## Fitur
+
+- Informasi dasar tentang MotoGP
+- Daftar pembalap terkenal
+- Jadwal balapan terbaru
+
+## Cara Penggunaan
+
+1. Buka file `index.html` di browser Anda.
+2. Jelajahi informasi yang tersedia.
+
+## Struktur File
+
+- `index.html` : Halaman utama website
+- `style.css` : Gaya tampilan website
+- `README.md` : Dokumentasi proyek
+
+## Kontribusi
+
+Silakan buat pull request jika ingin menambah fitur atau memperbaiki bug.
+
+## Lisensi
+
+Proyek ini menggunakan lisensi MIT.

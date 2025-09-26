@@ -1,139 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MotoGP Mini - Nazky</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MotoGP Mini - Nazky</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="index.h/styles.css">
 </head>
 <body>
-    <header class="site-header">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="logo">MotoGP<span class="dot">.</span></div>
-      </div>
+			<header class="site-header">
+				<div class="container nav-inner">
+					<div class="brand">
+						<a href="#banner" class="logo">MotoGP<span class="dot">.</span></a>
+					</div>
+					<nav id="main-nav" class="nav">
+						<ul class="nav-links">
+							<li class="nav-item"><a href="#banner" class="nav-link">Home</a></li>
+							<li class="nav-item"><a href="#riders" class="nav-link">Pembalap</a></li>
+							<li class="nav-item"><a href="#calendar" class="nav-link">Kalender</a></li>
+							<li class="nav-item"><a href="#news" class="nav-link">Berita</a></li>
+						</ul>
+					</nav>
+					<div class="nav-actions">
+						<select id="langSwitch" class="lang-switch" aria-label="Ganti bahasa">
+							<option value="id">ID</option>
+							<option value="en">EN</option>
+						</select>
+						<button id="loginBtn" class="btn btn-ghost">Login</button>
+						<button id="logoutBtn" class="btn btn-danger" style="display:none">Logout</button>
+					</div>
+				</div>
+			</header>
 
-      <nav id="main-nav" class="nav">
-                <ul class="nav-links">
-          <li class="nav-item"><a href="#" data-section="banner" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" data-section="riders" class="nav-link">Pembalap</a></li>
-          <li class="nav-item"><a href="#" data-section="calendar" class="nav-link">Kalender</a></li>
-          <li class="nav-item"><a href="#" data-section="news" class="nav-link">Berita</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <select id="langSwitch" class="lang-switch" aria-label="Ganti bahasa">
-          <option value="id">ID</option>
-          <option value="en">EN</option>
-        </select>
-
-        <button id="loginBtn" class="btn btn-ghost">Login</button>
-        <button id="logoutBtn" class="btn btn-danger" style="display:none">Logout</button>
-      </div>
-    </div>
-  </header>
-
-    <div id="loginModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <h3 id="loginTitle">Masuk</h3>
-      <form id="loginForm">
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" placeholder="nazky" required />
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" placeholder="password" required />
-        <div class="modal-actions">
-          <button type="submit" class="btn">Masuk</button>
-          <button type="button" id="closeModal" class="btn btn-ghost">Batal</button>
-        </div>
-      </form>
-    </div>
+	<div id="loginModal" class="modal" aria-hidden="true">
+			<div class="modal-content">
+				<h3 id="loginTitle">Masuk</h3>
+				<form id="loginForm">
+					<label for="username">Username</label>
+					<input id="username" name="username" type="text" placeholder="nazky" required />
+					<label for="password">Password</label>
+					<input id="password" name="password" type="password" placeholder="password" required />
+					<div class="modal-actions">
+						<button type="submit" class="btn">Masuk</button>
+						<button type="button" id="closeModal" class="btn btn-ghost">Batal</button>
+					</div>
+				</form>
+			</div>
   </div>
 
-    <main id="mainApp" class="main-app" style="display:none">
-        <section id="banner" class="banner">
-      <div class="container banner-inner">
-        <div class="banner-text">
-          <h1 id="bannerTitle">MotoGP — Kecepatan & Drama</h1>
-          <p id="bannerSub">Berita, jadwal, dan profil pembalap — versi ringan.</p>
-          <div class="banner-cta">
-            <a href="#riders" class="btn">Lihat Pembalap</a>
-            <a href="#calendar" class="btn btn-ghost">Lihat Kalender</a>
-          </div>
-        </div>
-        <div class="banner-art">
-                    <img src="673ae1ad34d16.jpg" alt="Logo MotoGP Faster Forward Fearless" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px;" />
-        </div>
-      </div>
-    </section>
 
-        <section id="riders" class="section">
-      <div class="container">
-        <h2 class="section-title" id="ridersTitle">Pembalap</h2>
-        <div id="ridersGrid" class="grid-grid">
-                    <div class="rider-card">
-            <img src="marc-marquez_169.jpeg" alt="Marc Marquez" class="rider-img" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;" />
-            <div class="rider-info" style="padding: 10px;">
-              <h3>Marc Marquez</h3>
-              <p>Gresini Racing (Ducati)</p>
-            </div>
-          </div>
-          <div class="rider-card">
-            <img src="Francesco_'Pecco'_Bagnaia_at_the_2023_Japanese_motorcycle_Grand_Prix.jpg" alt="Francesco Bagnaia" class="rider-img" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;" />
-            <div class="rider-info" style="padding: 10px;">
-              <h3>Francesco Bagnaia</h3>
-              <p>Ducati Lenovo Team</p>
-            </div>
-          </div>
-          <div class="rider-card">
-            <img src="Joan_Mir_2023_(cropped).jpg" alt="Joan Mir" class="rider-img" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;" />
-            <div class="rider-info" style="padding: 10px;">
-              <h3>Joan Mir</h3>
-              <p>Repsol Honda Team</p>
-            </div>
-          </div>
-          <div class="rider-card">
-            <img src="Fabio_Quartararo_at_the_2023_Japanese_motorcycle_Grand_Prix.jpg" alt="Fabio Quartararo" class="rider-img" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;" />
-            <div class="rider-info" style="padding: 10px;">
-              <h3>Fabio Quartararo</h3>
-              <p>Monster Energy Yamaha</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<main id="mainApp" class="main-app" style="display:none">
+		<section id="banner" class="banner">
+							<div class="container banner-inner">
+								<div class="banner-text">
+									<h1 id="bannerTitle">MotoGP — Kecepatan & Drama</h1>
+									<p id="bannerSub">Berita, jadwal, dan profil pembalap — versi ringan.</p>
+									<div class="banner-cta">
+										<a href="#riders" class="btn">Lihat Pembalap</a>
+										<a href="#calendar" class="btn btn-ghost">Lihat Kalender</a>
+									</div>
+								</div>
+								<div class="banner-art">
+									<img src="673ae1ad34d16.jpg" alt="Logo MotoGP Faster Forward Fearless" class="banner-img" />
+								</div>
+							</div>
+		</section>
 
-        <section id="calendar" class="section alt">
-      <div class="container">
-        <h2 class="section-title" id="calendarTitle">Kalender</h2>
-        <div id="calendarList" class="calendar-list"></div>
-      </div>
-    </section>
+		<section id="riders" class="section">
+			<div class="container">
+				<h2 class="section-title" id="ridersTitle">Pembalap</h2>
+				<div id="ridersGrid" class="grid-grid">
+								<div class="rider-card">
+									<img src="marc-marquez_169.jpeg" alt="Marc Marquez - Gresini Racing (Ducati)" class="rider-img" />
+									<div class="rider-info">
+										<h3>Marc Marquez</h3>
+										<p>Gresini Racing (Ducati)</p>
+									</div>
+								</div>
+								<div class="rider-card">
+									<img src="Francesco_'Pecco'_Bagnaia_at_the_2023_Japanese_motorcycle_Grand_Prix.jpg" alt="Francesco Bagnaia - Ducati Lenovo Team" class="rider-img" />
+									<div class="rider-info">
+										<h3>Francesco Bagnaia</h3>
+										<p>Ducati Lenovo Team</p>
+									</div>
+								</div>
+								<div class="rider-card">
+									<img src="Joan_Mir_2023_(cropped).jpg" alt="Joan Mir - Repsol Honda Team" class="rider-img" />
+									<div class="rider-info">
+										<h3>Joan Mir</h3>
+										<p>Repsol Honda Team</p>
+									</div>
+								</div>
+								<div class="rider-card">
+									<img src="Fabio_Quartararo_at_the_2023_Japanese_motorcycle_Grand_Prix.jpg" alt="Fabio Quartararo - Monster Energy Yamaha" class="rider-img" />
+									<div class="rider-info">
+										<h3>Fabio Quartararo</h3>
+										<p>Monster Energy Yamaha</p>
+									</div>
+								</div>
+				</div>
+			</div>
+		</section>
 
-        <section id="news" class="section">
-      <div class="container">
-        <h2 class="section-title" id="newsTitle">Berita Terkini</h2>
-        <div id="newsList" class="news-list"></div>
-      </div>
-    </section>
-  </main>
+		<section id="calendar" class="section alt">
+			<div class="container">
+				<h2 class="section-title" id="calendarTitle">Kalender</h2>
+						<div id="calendarList" class="calendar-list">
+										<div class="calendar-card">
+											<div class="calendar-title">Thailand GP</div>
+											<div class="calendar-date">2 Maret 2025</div>
+											<div class="calendar-time">15:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Argentina GP</div>
+											<div class="calendar-date">17 Maret 2025</div>
+											<div class="calendar-time">01:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Americas GP</div>
+											<div class="calendar-date">31 Maret 2025</div>
+											<div class="calendar-time">02:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Qatar GP</div>
+											<div class="calendar-date">14 April 2025</div>
+											<div class="calendar-time">00:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Spanish GP</div>
+											<div class="calendar-date">27 April 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">French GP</div>
+											<div class="calendar-date">11 Mei 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">British GP</div>
+											<div class="calendar-date">25 Mei 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Aragon GP</div>
+											<div class="calendar-date">8 Juni 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Italian GP</div>
+											<div class="calendar-date">22 Juni 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Dutch GP</div>
+											<div class="calendar-date">29 Juni 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">German GP</div>
+											<div class="calendar-date">13 Juli 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Czech GP</div>
+											<div class="calendar-date">20 Juli 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Austrian GP</div>
+											<div class="calendar-date">17 Agustus 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Hungarian GP</div>
+											<div class="calendar-date">24 Agustus 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Catalan GP</div>
+											<div class="calendar-date">7 September 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">San Marino GP</div>
+											<div class="calendar-date">14 September 2025</div>
+											<div class="calendar-time">19:00</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Japanese GP</div>
+											<div class="calendar-date">28 September 2025</div>
+											<div class="calendar-time">-</div>
+										</div>
+										<div class="calendar-card">
+											<div class="calendar-title">Indonesian GP</div>
+											<div class="calendar-date">5 Oktober 2025</div>
+											<div class="calendar-time">13:00</div>
+										</div>
+						</div>
+			</div>
+		</section>
 
-    <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="foot-left">
-        <div>© <span id="year"></span> MotoGP Mini</div>
-        <div class="author">Author: Nazky</div>
-      </div>
-      <div class="foot-right">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-      </div>
-    </div>
-  </footer>
+		<section id="news" class="section">
+			<div class="container">
+				<h2 class="section-title" id="newsTitle">Berita Terkini</h2>
+				<div id="newsList" class="news-list"></div>
+			</div>
+		</section>
+	</main>
 
-  <script src="app.js"></script>
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<div class="foot-left">
+				<div>© <span id="year"></span> MotoGP Mini</div>
+				<div class="author">Author: Nazky</div>
+			</div>
+			<div class="foot-right">
+				<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+				<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+			</div>
+		</div>
+	</footer>
+		<script src="index.h/app.js"></script>
 </body>
 </html>
